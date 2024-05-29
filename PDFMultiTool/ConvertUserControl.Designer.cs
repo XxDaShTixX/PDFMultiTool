@@ -33,7 +33,7 @@
             this.browseOutput_ConverUserControl_Button = new System.Windows.Forms.Button();
             this.browseOutput_ConverUserControl_Textbox = new System.Windows.Forms.TextBox();
             this.SelectFiles_ConverUserControl_Label = new System.Windows.Forms.Label();
-            this.SelectOutputLocation_ConverUserControl_Label = new System.Windows.Forms.Label();
+            this.browseOutput_ConverUserControl_Label = new System.Windows.Forms.Label();
             this.convertExtension_ConverUserControl_Label = new System.Windows.Forms.Label();
             this.fromExtension_ConverUserControl_ComboBox = new System.Windows.Forms.ComboBox();
             this.fromExtension_ConverUserControl_Label = new System.Windows.Forms.Label();
@@ -43,7 +43,9 @@
             this.SelectFiles_ConverUserControl_ListBox = new System.Windows.Forms.ListBox();
             this.browseFolder_ConvertUserControl_FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.progress_UserControl_ProgressBar = new System.Windows.Forms.ProgressBar();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.Resolution_ConvertUserControl_Label = new System.Windows.Forms.Label();
+            this.Resolution_ConvertUserControl_TextBox = new System.Windows.Forms.TextBox();
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // convert_ConverUserControl_Button
@@ -52,7 +54,7 @@
             this.convert_ConverUserControl_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.convert_ConverUserControl_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.convert_ConverUserControl_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.convert_ConverUserControl_Button.Location = new System.Drawing.Point(326, 324);
+            this.convert_ConverUserControl_Button.Location = new System.Drawing.Point(579, 336);
             this.convert_ConverUserControl_Button.Name = "convert_ConverUserControl_Button";
             this.convert_ConverUserControl_Button.Size = new System.Drawing.Size(100, 50);
             this.convert_ConverUserControl_Button.TabIndex = 4;
@@ -66,7 +68,7 @@
             this.BrowseFile_ConverUserControl_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BrowseFile_ConverUserControl_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrowseFile_ConverUserControl_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.BrowseFile_ConverUserControl_Button.Location = new System.Drawing.Point(207, 93);
+            this.BrowseFile_ConverUserControl_Button.Location = new System.Drawing.Point(207, 128);
             this.BrowseFile_ConverUserControl_Button.Name = "BrowseFile_ConverUserControl_Button";
             this.BrowseFile_ConverUserControl_Button.Size = new System.Drawing.Size(100, 30);
             this.BrowseFile_ConverUserControl_Button.TabIndex = 5;
@@ -80,7 +82,7 @@
             this.browseOutput_ConverUserControl_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.browseOutput_ConverUserControl_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.browseOutput_ConverUserControl_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.browseOutput_ConverUserControl_Button.Location = new System.Drawing.Point(207, 261);
+            this.browseOutput_ConverUserControl_Button.Location = new System.Drawing.Point(207, 300);
             this.browseOutput_ConverUserControl_Button.Name = "browseOutput_ConverUserControl_Button";
             this.browseOutput_ConverUserControl_Button.Size = new System.Drawing.Size(100, 30);
             this.browseOutput_ConverUserControl_Button.TabIndex = 6;
@@ -91,7 +93,7 @@
             // browseOutput_ConverUserControl_Textbox
             // 
             this.browseOutput_ConverUserControl_Textbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.browseOutput_ConverUserControl_Textbox.Location = new System.Drawing.Point(7, 297);
+            this.browseOutput_ConverUserControl_Textbox.Location = new System.Drawing.Point(7, 336);
             this.browseOutput_ConverUserControl_Textbox.Name = "browseOutput_ConverUserControl_Textbox";
             this.browseOutput_ConverUserControl_Textbox.ReadOnly = true;
             this.browseOutput_ConverUserControl_Textbox.Size = new System.Drawing.Size(300, 27);
@@ -103,23 +105,23 @@
             this.SelectFiles_ConverUserControl_Label.BackColor = System.Drawing.Color.Transparent;
             this.SelectFiles_ConverUserControl_Label.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectFiles_ConverUserControl_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.SelectFiles_ConverUserControl_Label.Location = new System.Drawing.Point(3, 99);
+            this.SelectFiles_ConverUserControl_Label.Location = new System.Drawing.Point(3, 134);
             this.SelectFiles_ConverUserControl_Label.Name = "SelectFiles_ConverUserControl_Label";
             this.SelectFiles_ConverUserControl_Label.Size = new System.Drawing.Size(111, 19);
             this.SelectFiles_ConverUserControl_Label.TabIndex = 10;
             this.SelectFiles_ConverUserControl_Label.Text = "2. Select File(s)";
             // 
-            // SelectOutputLocation_ConverUserControl_Label
+            // browseOutput_ConverUserControl_Label
             // 
-            this.SelectOutputLocation_ConverUserControl_Label.AutoSize = true;
-            this.SelectOutputLocation_ConverUserControl_Label.BackColor = System.Drawing.Color.Transparent;
-            this.SelectOutputLocation_ConverUserControl_Label.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectOutputLocation_ConverUserControl_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.SelectOutputLocation_ConverUserControl_Label.Location = new System.Drawing.Point(3, 267);
-            this.SelectOutputLocation_ConverUserControl_Label.Name = "SelectOutputLocation_ConverUserControl_Label";
-            this.SelectOutputLocation_ConverUserControl_Label.Size = new System.Drawing.Size(181, 19);
-            this.SelectOutputLocation_ConverUserControl_Label.TabIndex = 11;
-            this.SelectOutputLocation_ConverUserControl_Label.Text = "3. Select Output Location";
+            this.browseOutput_ConverUserControl_Label.AutoSize = true;
+            this.browseOutput_ConverUserControl_Label.BackColor = System.Drawing.Color.Transparent;
+            this.browseOutput_ConverUserControl_Label.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browseOutput_ConverUserControl_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.browseOutput_ConverUserControl_Label.Location = new System.Drawing.Point(3, 306);
+            this.browseOutput_ConverUserControl_Label.Name = "browseOutput_ConverUserControl_Label";
+            this.browseOutput_ConverUserControl_Label.Size = new System.Drawing.Size(181, 19);
+            this.browseOutput_ConverUserControl_Label.TabIndex = 11;
+            this.browseOutput_ConverUserControl_Label.Text = "3. Select Output Location";
             // 
             // convertExtension_ConverUserControl_Label
             // 
@@ -138,20 +140,19 @@
             this.fromExtension_ConverUserControl_ComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.fromExtension_ConverUserControl_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fromExtension_ConverUserControl_ComboBox.FormattingEnabled = true;
-            this.fromExtension_ConverUserControl_ComboBox.Location = new System.Drawing.Point(54, 30);
+            this.fromExtension_ConverUserControl_ComboBox.Location = new System.Drawing.Point(57, 30);
             this.fromExtension_ConverUserControl_ComboBox.Name = "fromExtension_ConverUserControl_ComboBox";
-            this.fromExtension_ConverUserControl_ComboBox.Size = new System.Drawing.Size(100, 27);
+            this.fromExtension_ConverUserControl_ComboBox.Size = new System.Drawing.Size(250, 27);
             this.fromExtension_ConverUserControl_ComboBox.Sorted = true;
             this.fromExtension_ConverUserControl_ComboBox.TabIndex = 14;
             this.fromExtension_ConverUserControl_ComboBox.SelectedIndexChanged += new System.EventHandler(this.fromExtension_ConverUserControl_ComboBox_SelectedIndexChanged);
-            this.fromExtension_ConverUserControl_ComboBox.Click += new System.EventHandler(this.fromExtension_ConverUserControl_ComboBox_Click);
             // 
             // fromExtension_ConverUserControl_Label
             // 
             this.fromExtension_ConverUserControl_Label.AutoSize = true;
             this.fromExtension_ConverUserControl_Label.BackColor = System.Drawing.Color.Transparent;
             this.fromExtension_ConverUserControl_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.fromExtension_ConverUserControl_Label.Location = new System.Drawing.Point(3, 38);
+            this.fromExtension_ConverUserControl_Label.Location = new System.Drawing.Point(3, 33);
             this.fromExtension_ConverUserControl_Label.Name = "fromExtension_ConverUserControl_Label";
             this.fromExtension_ConverUserControl_Label.Size = new System.Drawing.Size(45, 19);
             this.fromExtension_ConverUserControl_Label.TabIndex = 15;
@@ -162,7 +163,7 @@
             this.toExtension_ConverUserControl_Label.AutoSize = true;
             this.toExtension_ConverUserControl_Label.BackColor = System.Drawing.Color.Transparent;
             this.toExtension_ConverUserControl_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.toExtension_ConverUserControl_Label.Location = new System.Drawing.Point(176, 38);
+            this.toExtension_ConverUserControl_Label.Location = new System.Drawing.Point(3, 66);
             this.toExtension_ConverUserControl_Label.Name = "toExtension_ConverUserControl_Label";
             this.toExtension_ConverUserControl_Label.Size = new System.Drawing.Size(25, 19);
             this.toExtension_ConverUserControl_Label.TabIndex = 17;
@@ -173,15 +174,12 @@
             this.toExtension_ConverUserControl_ComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.toExtension_ConverUserControl_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toExtension_ConverUserControl_ComboBox.FormattingEnabled = true;
-            this.toExtension_ConverUserControl_ComboBox.Location = new System.Drawing.Point(207, 30);
+            this.toExtension_ConverUserControl_ComboBox.Location = new System.Drawing.Point(57, 63);
             this.toExtension_ConverUserControl_ComboBox.Name = "toExtension_ConverUserControl_ComboBox";
-            this.toExtension_ConverUserControl_ComboBox.Size = new System.Drawing.Size(100, 27);
+            this.toExtension_ConverUserControl_ComboBox.Size = new System.Drawing.Size(250, 27);
             this.toExtension_ConverUserControl_ComboBox.Sorted = true;
             this.toExtension_ConverUserControl_ComboBox.TabIndex = 16;
-            // 
-            // browseFiles_ConvertUserControl_OpenFileDialog
-            // 
-            this.browseFiles_ConvertUserControl_OpenFileDialog.FileName = "openFileDialog";
+            this.toExtension_ConverUserControl_ComboBox.SelectedIndexChanged += new System.EventHandler(this.toExtension_ConverUserControl_ComboBox_SelectedIndexChanged);
             // 
             // SelectFiles_ConverUserControl_ListBox
             // 
@@ -189,10 +187,14 @@
             this.SelectFiles_ConverUserControl_ListBox.FormattingEnabled = true;
             this.SelectFiles_ConverUserControl_ListBox.HorizontalScrollbar = true;
             this.SelectFiles_ConverUserControl_ListBox.ItemHeight = 19;
-            this.SelectFiles_ConverUserControl_ListBox.Location = new System.Drawing.Point(7, 129);
+            this.SelectFiles_ConverUserControl_ListBox.Location = new System.Drawing.Point(7, 164);
             this.SelectFiles_ConverUserControl_ListBox.Name = "SelectFiles_ConverUserControl_ListBox";
             this.SelectFiles_ConverUserControl_ListBox.Size = new System.Drawing.Size(300, 99);
             this.SelectFiles_ConverUserControl_ListBox.TabIndex = 18;
+            // 
+            // browseFolder_ConvertUserControl_FolderBrowserDialog
+            // 
+            this.browseFolder_ConvertUserControl_FolderBrowserDialog.ShowNewFolderButton = false;
             // 
             // progress_UserControl_ProgressBar
             // 
@@ -202,15 +204,46 @@
             this.progress_UserControl_ProgressBar.Size = new System.Drawing.Size(679, 10);
             this.progress_UserControl_ProgressBar.TabIndex = 19;
             // 
-            // openFileDialog
+            // Resolution_ConvertUserControl_Label
             // 
-            this.openFileDialog.FileName = "gswin64c.exe";
-            this.openFileDialog.InitialDirectory = "C:\\Program Files\\gs\\";
+            this.Resolution_ConvertUserControl_Label.AutoSize = true;
+            this.Resolution_ConvertUserControl_Label.BackColor = System.Drawing.Color.Transparent;
+            this.Resolution_ConvertUserControl_Label.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Resolution_ConvertUserControl_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.Resolution_ConvertUserControl_Label.Location = new System.Drawing.Point(375, 6);
+            this.Resolution_ConvertUserControl_Label.Name = "Resolution_ConvertUserControl_Label";
+            this.Resolution_ConvertUserControl_Label.Size = new System.Drawing.Size(175, 19);
+            this.Resolution_ConvertUserControl_Label.TabIndex = 21;
+            this.Resolution_ConvertUserControl_Label.Text = "4. [Optional] Resolution";
+            // 
+            // Resolution_ConvertUserControl_TextBox
+            // 
+            this.Resolution_ConvertUserControl_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.Resolution_ConvertUserControl_TextBox.Location = new System.Drawing.Point(579, 3);
+            this.Resolution_ConvertUserControl_TextBox.Name = "Resolution_ConvertUserControl_TextBox";
+            this.Resolution_ConvertUserControl_TextBox.Size = new System.Drawing.Size(100, 27);
+            this.Resolution_ConvertUserControl_TextBox.TabIndex = 20;
+            this.Resolution_ConvertUserControl_TextBox.Text = "300";
+            this.Resolution_ConvertUserControl_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Resolution_ConvertUserControl_TextBox_KeyPress);
+            // 
+            // SeparateOutputFiles_ConvertUserControl_CheckBox
+            // 
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox.AutoSize = true;
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox.Location = new System.Drawing.Point(379, 133);
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox.Name = "SeparateOutputFiles_ConvertUserControl_CheckBox";
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox.Size = new System.Drawing.Size(285, 23);
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox.TabIndex = 24;
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox.Text = "5. Separate Output Files for Each Page";
+            this.SeparateOutputFiles_ConvertUserControl_CheckBox.UseVisualStyleBackColor = true;
             // 
             // ConvertUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.Controls.Add(this.SeparateOutputFiles_ConvertUserControl_CheckBox);
+            this.Controls.Add(this.Resolution_ConvertUserControl_Label);
+            this.Controls.Add(this.Resolution_ConvertUserControl_TextBox);
             this.Controls.Add(this.progress_UserControl_ProgressBar);
             this.Controls.Add(this.SelectFiles_ConverUserControl_ListBox);
             this.Controls.Add(this.toExtension_ConverUserControl_Label);
@@ -218,7 +251,7 @@
             this.Controls.Add(this.fromExtension_ConverUserControl_Label);
             this.Controls.Add(this.fromExtension_ConverUserControl_ComboBox);
             this.Controls.Add(this.convertExtension_ConverUserControl_Label);
-            this.Controls.Add(this.SelectOutputLocation_ConverUserControl_Label);
+            this.Controls.Add(this.browseOutput_ConverUserControl_Label);
             this.Controls.Add(this.SelectFiles_ConverUserControl_Label);
             this.Controls.Add(this.browseOutput_ConverUserControl_Textbox);
             this.Controls.Add(this.browseOutput_ConverUserControl_Button);
@@ -240,7 +273,7 @@
         private System.Windows.Forms.Button browseOutput_ConverUserControl_Button;
         private System.Windows.Forms.TextBox browseOutput_ConverUserControl_Textbox;
         private System.Windows.Forms.Label SelectFiles_ConverUserControl_Label;
-        private System.Windows.Forms.Label SelectOutputLocation_ConverUserControl_Label;
+        private System.Windows.Forms.Label browseOutput_ConverUserControl_Label;
         private System.Windows.Forms.Label convertExtension_ConverUserControl_Label;
         private System.Windows.Forms.ComboBox fromExtension_ConverUserControl_ComboBox;
         private System.Windows.Forms.Label fromExtension_ConverUserControl_Label;
@@ -250,6 +283,8 @@
         private System.Windows.Forms.ListBox SelectFiles_ConverUserControl_ListBox;
         private System.Windows.Forms.FolderBrowserDialog browseFolder_ConvertUserControl_FolderBrowserDialog;
         private System.Windows.Forms.ProgressBar progress_UserControl_ProgressBar;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label Resolution_ConvertUserControl_Label;
+        private System.Windows.Forms.TextBox Resolution_ConvertUserControl_TextBox;
+        private System.Windows.Forms.CheckBox SeparateOutputFiles_ConvertUserControl_CheckBox;
     }
 }
