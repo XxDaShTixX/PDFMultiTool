@@ -13,3 +13,4 @@ D:\Dev\PDFMultiTool\PDFMultiTool\obj\Debug\PDFMultiTool.ConvertUserControl.resou
 D:\Dev\PDFMultiTool\PDFMultiTool\obj\Debug\PDFMultiTool.csproj.CopyComplete
 D:\Dev\PDFMultiTool\PDFMultiTool\bin\Debug\Ghostscript.NET.dll
 D:\Dev\PDFMultiTool\PDFMultiTool\bin\Debug\Ghostscript.NET.xml
+D:\Dev\PDFMultiTool\PDFMultiTool\obj\Debug\PDFMultiTool.CombineUserControl.resources

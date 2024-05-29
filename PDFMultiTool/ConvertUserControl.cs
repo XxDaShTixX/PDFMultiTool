@@ -1,8 +1,6 @@
-﻿using PDFMultiTool.Utility;
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace PDFMultiTool
 {
@@ -21,11 +19,10 @@ namespace PDFMultiTool
         private void ConvertUserControl_Load(object sender, EventArgs e)
         {
             // Get list of supported extensions to convert from
-            string[] supportedExtensions = PDFConverter.Instance.GetSupportedExtensions();
+            string[] supportedExtensions = PDFConvert.Instance.GetSupportedExtensions();
 
             // Load into combo box
-            fromExtension_ConverUserControl_ComboBox.Items.AddRange(supportedExtensions);
-
+            fromExtension_ComboBox.Items.AddRange(supportedExtensions);
         }
 
         /// <summary>
@@ -33,15 +30,15 @@ namespace PDFMultiTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void fromExtension_ConverUserControl_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void fromExtension_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Clear objects as needed
-            toExtension_ConverUserControl_ComboBox.Items.Clear();
-            SelectFiles_ConverUserControl_ListBox.Items.Clear();
-            browseOutput_ConverUserControl_Textbox.Clear();
+            toExtension_ComboBox.Items.Clear();
+            SelectFiles_ListBox.Items.Clear();
+            browseOutput_Textbox.Clear();
 
             // If a fromExtension is still selected, load the toExtension
-            if (fromExtension_ConverUserControl_ComboBox.SelectedIndex != -1)
+            if (fromExtension_ComboBox.SelectedIndex != -1)
             {
                 // Refresh the ToExtension combobox
                 RefreshToExtensionComboBox(sender as ComboBox);
@@ -53,25 +50,25 @@ namespace PDFMultiTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toExtension_ConverUserControl_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void toExtension_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Get the selected item from the dropdown
-            bool isEnforceSeparateOutputFiles = PDFConverter.Instance.GetExtensionsEnforceSeparateOutputFiles(
-                toExtension_ConverUserControl_ComboBox.SelectedItem.ToString()
+            bool isEnforceSeparateOutputFiles = PDFConvert.Instance.GetExtensionsEnforceSeparateOutputFiles(
+                toExtension_ComboBox.SelectedItem.ToString()
             );
 
             // Check if the selected item has an enforceable extension
             if (isEnforceSeparateOutputFiles)
             {
                 // If it is, check the checkbox and make it read-only
-                SeparateOutputFiles_ConvertUserControl_CheckBox.Checked = true;
-                SeparateOutputFiles_ConvertUserControl_CheckBox.Enabled = false;
+                SeparateOutputFiles_CheckBox.Checked = true;
+                SeparateOutputFiles_CheckBox.Enabled = false;
             }
             else
             {
                 // If it's not, uncheck the checkbox and make it editable
-                SeparateOutputFiles_ConvertUserControl_CheckBox.Checked = false;
-                SeparateOutputFiles_ConvertUserControl_CheckBox.Enabled = true;
+                SeparateOutputFiles_CheckBox.Checked = false;
+                SeparateOutputFiles_CheckBox.Enabled = true;
             }
         }
 
@@ -81,11 +78,11 @@ namespace PDFMultiTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BrowseFile_ConverUserControl_Button_Click(object sender, EventArgs e)
+        private void BrowseFile_Button_Click(object sender, EventArgs e)
         {
             // When to NOT process the click?
-            if(fromExtension_ConverUserControl_ComboBox.SelectedItem == null
-                || toExtension_ConverUserControl_ComboBox.SelectedItem == null)
+            if(fromExtension_ComboBox.SelectedItem == null
+                || toExtension_ComboBox.SelectedItem == null)
             {
                 MessageBox.Show(
                     "Please follow the steps in order.", 
@@ -99,7 +96,7 @@ namespace PDFMultiTool
             OpenFileDialog openFileDialog = browseFiles_ConvertUserControl_OpenFileDialog;
 
             // Set filter options
-            string selectedExtension = fromExtension_ConverUserControl_ComboBox.SelectedItem as string;
+            string selectedExtension = fromExtension_ComboBox.SelectedItem as string;
             openFileDialog.Filter = $"{selectedExtension.ToUpper()} Files (*.{selectedExtension})|*.{selectedExtension}";
 
             // Set filter index
@@ -118,7 +115,7 @@ namespace PDFMultiTool
                 string[] paths = openFileDialog.FileNames;
 
                 // Reference the list view in the user control
-                ListBox listBox = SelectFiles_ConverUserControl_ListBox;
+                ListBox listBox = SelectFiles_ListBox;
 
                 // Clear existing list
                 listBox.Items.Clear();
@@ -137,12 +134,12 @@ namespace PDFMultiTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void browseOutput_ConverUserControl_Button_Click(object sender, EventArgs e)
+        private void browseOutput_Button_Click(object sender, EventArgs e)
         {
             // When to NOT process the click?
-            if (fromExtension_ConverUserControl_ComboBox.SelectedItem == null
-            || toExtension_ConverUserControl_ComboBox.SelectedItem == null
-            || SelectFiles_ConverUserControl_ListBox.Items.Count == 0)
+            if (fromExtension_ComboBox.SelectedItem == null
+            || toExtension_ComboBox.SelectedItem == null
+            || SelectFiles_ListBox.Items.Count == 0)
             {
                 MessageBox.Show(
                     "Please follow the steps in order.",
@@ -165,7 +162,7 @@ namespace PDFMultiTool
                 string selectedFolderPath = folderBrowserDialog.SelectedPath;
 
                 // Set the text value of the textbox
-                browseOutput_ConverUserControl_Textbox.Text = selectedFolderPath;
+                browseOutput_Textbox.Text = selectedFolderPath;
             }
         }
 
@@ -175,7 +172,7 @@ namespace PDFMultiTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Resolution_ConvertUserControl_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void Resolution_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the input is not a digit
             if (!char.IsDigit(e.KeyChar) 
@@ -195,10 +192,10 @@ namespace PDFMultiTool
             string extension = comboBox.SelectedItem as string;
 
             // Get array of conversion extensions supported for the selected extension
-            string[] conversionExtensions = PDFConverter.Instance.GetConversionExtensions(extension);
+            string[] conversionExtensions = PDFConvert.Instance.GetConversionExtensions(extension);
 
             // Apply the conversion extendion to the "convert to" dropdown
-            toExtension_ConverUserControl_ComboBox.Items.AddRange(conversionExtensions);
+            toExtension_ComboBox.Items.AddRange(conversionExtensions);
         }
 
         /// <summary>
@@ -206,13 +203,13 @@ namespace PDFMultiTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void convert_ConverUserControl_Button_Click(object sender, EventArgs e)
+        private void convert_Button_Click(object sender, EventArgs e)
         {
             // When to NOT process the click?
-            if (fromExtension_ConverUserControl_ComboBox.SelectedItem.Equals(null)
-                || toExtension_ConverUserControl_ComboBox.SelectedItem.Equals(null)
-                || SelectFiles_ConverUserControl_ListBox.Items.Count.Equals(0)
-                || browseOutput_ConverUserControl_Textbox.Text.Equals(string.Empty)
+            if (fromExtension_ComboBox.SelectedItem.Equals(null)
+                || toExtension_ComboBox.SelectedItem.Equals(null)
+                || SelectFiles_ListBox.Items.Count.Equals(0)
+                || browseOutput_Textbox.Text.Equals(string.Empty)
             )
             {
                 MessageBox.Show(
@@ -223,13 +220,13 @@ namespace PDFMultiTool
                 return;
             }
 
-            PDFConverter.Instance.Convert(
-                SelectFiles_ConverUserControl_ListBox.Items.Cast<string>().ToArray(),
-                fromExtension_ConverUserControl_ComboBox.Text,
-                toExtension_ConverUserControl_ComboBox.Text,
-                browseOutput_ConverUserControl_Textbox.Text,
-                SeparateOutputFiles_ConvertUserControl_CheckBox.Checked,
-                Int16.Parse(Resolution_ConvertUserControl_TextBox.Text)
+            PDFConvert.Instance.Convert(
+                SelectFiles_ListBox.Items.Cast<string>().ToArray(),
+                fromExtension_ComboBox.Text,
+                toExtension_ComboBox.Text,
+                browseOutput_Textbox.Text,
+                SeparateOutputFiles_CheckBox.Checked,
+                Int16.Parse(Resolution_TextBox.Text)
             );
         }
     }

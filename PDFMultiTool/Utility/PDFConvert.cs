@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PDFMultiTool
 {
-    internal class PDFConverter
+    internal class PDFConvert
     {
-        private static PDFConverter instance = null;
+        private static PDFConvert instance = null;
         private static readonly object padlock = new object();
 
         // Hold each extension and what other extensions it is capable of being converted to
@@ -90,14 +90,14 @@ namespace PDFMultiTool
         /// <summary>
         /// Constructor
         /// </summary>
-        PDFConverter()
+        PDFConvert()
         {
         }
 
         /// <summary>
         /// Implement Singleton pattern
         /// </summary>
-        public static PDFConverter Instance
+        public static PDFConvert Instance
         {
             get
             {
@@ -105,7 +105,7 @@ namespace PDFMultiTool
                 {
                     if (instance == null)
                     {
-                        instance = new PDFConverter();
+                        instance = new PDFConvert();
                     }
                     return instance;
                 }
@@ -206,7 +206,7 @@ namespace PDFMultiTool
         )
         {
             // Get the device to use for the process
-            string device = PDFConverter.Instance.GetDevice(
+            string device = GetDevice(
                 fromExtension,
                 toExtension
             );

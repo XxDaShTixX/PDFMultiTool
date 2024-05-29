@@ -121,7 +121,6 @@
             // combine_MainForm_Button
             // 
             this.combine_MainForm_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.combine_MainForm_Button.Enabled = false;
             this.combine_MainForm_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
             this.combine_MainForm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combine_MainForm_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
