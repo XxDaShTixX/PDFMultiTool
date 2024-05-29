@@ -43,7 +43,7 @@ Here are a few simple rules and suggestions to remember when contributing to thi
 
 ## Licensing
 
-See the [LICENSE](LICENSE.md) file for more details. 
+See the [LICENSE](LICENSE) file for more details. 
 
 We accept contributions in "good faith" that it isn't bound to a conflicting license.  By submitting a PR you agree to distribute your work under the license and copyright.
 
