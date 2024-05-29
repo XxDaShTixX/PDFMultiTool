@@ -1,7 +1,6 @@
 ﻿using PDFMultiTool.Enums;
 using PDFMultiTool.Utility;
 using System;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -31,6 +30,22 @@ namespace PDFMultiTool
 
             // Set event handler for when window is being resized
             this.Resize += new EventHandler(FormResizingEventHandler);
+
+            // Initialize everything that needs to be initialized
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            // MUST INITIALIZE FIRST
+            // Reference logger output window in Logger singleton class
+            Logger.Instance.SetLogRichTextBox(output_MainForm_RichTextbox);
+
+            // Initialize configuration file
+            Configuration.Instance.InitializeConfig(
+                output_MainForm_RichTextbox,
+                ghostScriptFile_MainForm_OpenFileDialog
+            );
         }
 
         private void Minimize_Button_Click(object sender, EventArgs e)
@@ -85,22 +100,11 @@ namespace PDFMultiTool
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            // Initialize configuration file
-            Configuration.Instance.InitializeConfig(
-                output_MainForm_RichTextbox, 
-                ghostScriptFile_MainForm_OpenFileDialog
-            );
-        }
+        
 
         private void combine_MainForm_Button_Click(object sender, EventArgs e)
         {
             // TESTING
-            Logger.Instance.AppendText(
-                output_MainForm_RichTextbox,
-                Configuration.Instance.GetValue(ConfigurationOptionsEnum.GhostScriptPath.ToString())
-            );
         }
     }
 }

@@ -63,6 +63,7 @@
             // encryptDecrypt_MainForm_Button
             // 
             this.encryptDecrypt_MainForm_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.encryptDecrypt_MainForm_Button.Enabled = false;
             this.encryptDecrypt_MainForm_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
             this.encryptDecrypt_MainForm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.encryptDecrypt_MainForm_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,6 +91,7 @@
             // insert_MainForm_Button
             // 
             this.insert_MainForm_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.insert_MainForm_Button.Enabled = false;
             this.insert_MainForm_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
             this.insert_MainForm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.insert_MainForm_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,6 +106,7 @@
             // split_MainForm_Button
             // 
             this.split_MainForm_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.split_MainForm_Button.Enabled = false;
             this.split_MainForm_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
             this.split_MainForm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.split_MainForm_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,6 +121,7 @@
             // combine_MainForm_Button
             // 
             this.combine_MainForm_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.combine_MainForm_Button.Enabled = false;
             this.combine_MainForm_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
             this.combine_MainForm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combine_MainForm_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,7 +234,6 @@
             this.Name = "MainForm";
             this.Opacity = 0.95D;
             this.Text = "PDF Multi Tool";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);

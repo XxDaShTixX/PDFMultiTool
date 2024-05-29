@@ -50,7 +50,6 @@ namespace PDFMultiTool
 
             // Log
             Logger.Instance.AppendText(
-                logRichTextBox,
                 $"Config initialization done."
             );
         }
@@ -62,7 +61,6 @@ namespace PDFMultiTool
             if (!string.IsNullOrEmpty(savedPath) && File.Exists(savedPath))
             {
                 Logger.Instance.AppendText(
-                    logRichTextBox, 
                     $"Found '{ConfigurationOptionsEnum.GhostScriptPath}' key in config: " + savedPath
                 );
                 return;
@@ -80,7 +78,6 @@ namespace PDFMultiTool
                 if (File.Exists(potentialPath))
                 {
                     Logger.Instance.AppendText(
-                        logRichTextBox,
                         $"Found '{defaultGSExe}' in default path: " + defaultGSPath
                     );
 
@@ -98,7 +95,6 @@ namespace PDFMultiTool
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 Logger.Instance.AppendText(
-                    logRichTextBox,
                     $"Set GhostScript path: " + openFileDialog.FileName
                 );
 
@@ -108,7 +104,6 @@ namespace PDFMultiTool
             else
             {
                 Logger.Instance.AppendText(
-                    logRichTextBox,
                     $"Could not initialize {ConfigurationOptionsEnum.GhostScriptPath}. The application may not function correctly."
                 );
             }

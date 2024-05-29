@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace PDFMultiTool.Utility
 {
@@ -11,32 +10,51 @@ namespace PDFMultiTool.Utility
 
         public static Logger Instance { get { return lazy.Value; } }
 
+        private RichTextBox logTextBox;
+
         private const string logNewLineSeparator = "- - -";
 
         private Logger() { }
 
-        public void AppendText(RichTextBox richTextBox, string text)
+        public void AppendText(string text)
         {
-            if (richTextBox.InvokeRequired)
+            string timestamp = DateTime.Now.ToString("[yyyy-MM-dd HH:mm:ss]  ");
+            text = timestamp + text;
+
+            if (this.logTextBox.InvokeRequired)
             {
-                richTextBox.Invoke(new Action(() => {
-                    richTextBox.AppendText(text);
+                this.logTextBox.Invoke(new Action(() => {
+                    this.logTextBox.AppendText(text);
 
                     // Separator
-                    richTextBox.AppendText(Environment.NewLine);
-                    richTextBox.AppendText(logNewLineSeparator);
-                    richTextBox.AppendText(Environment.NewLine);
+                    this.logTextBox.AppendText(Environment.NewLine);
+                    this.logTextBox.AppendText(logNewLineSeparator);
+                    this.logTextBox.AppendText(Environment.NewLine);
                 }));
             }
             else
             {
-                richTextBox.AppendText(text);
+                this.logTextBox.AppendText(text);
 
                 // Separator
-                richTextBox.AppendText(Environment.NewLine);
-                richTextBox.AppendText(logNewLineSeparator);
-                richTextBox.AppendText(Environment.NewLine);
+                this.logTextBox.AppendText(Environment.NewLine);
+                this.logTextBox.AppendText(logNewLineSeparator);
+                this.logTextBox.AppendText(Environment.NewLine);
             }
+
+            this.logTextBox.ScrollToCaret();
+        }
+
+        /// <summary>
+        /// Sets the logRichTextBox instance to the one that the logger should log to
+        /// </summary>
+        /// <param name="richTextBox"></param>
+        public void SetLogRichTextBox(RichTextBox richTextBox)
+        {
+            this.logTextBox = richTextBox;
+
+            // Log
+            AppendText("Sucessfully referenced output window.");
         }
     }
 }
