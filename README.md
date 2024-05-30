@@ -3,9 +3,6 @@
 # 📃 About
 PDF Multi-Tool is a desktop application built with Windows Forms and .NET Framework 4.8 in C#. It uses the GhostScript library to convert and perform other tasks on PDF files. The application provides a user-friendly interface for managing conversion tasks.
 
-  
-This is currently work in progress. Once I have at least a complete feature implemented, I will publish the first release.
-
 # 📃 Code Dependencies
 - This project is built using the [GhostScript.NET by Artifex](https://github.com/ArtifexSoftware/Ghostscript.NET) .NET library.
   - NuGet package: [Ghostscript.NET](https://www.nuget.org/packages/Ghostscript.NET/).
