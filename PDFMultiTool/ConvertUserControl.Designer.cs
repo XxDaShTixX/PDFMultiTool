@@ -212,9 +212,9 @@
             this.Resolution_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.Resolution_Label.Location = new System.Drawing.Point(375, 6);
             this.Resolution_Label.Name = "Resolution_Label";
-            this.Resolution_Label.Size = new System.Drawing.Size(175, 19);
+            this.Resolution_Label.Size = new System.Drawing.Size(100, 19);
             this.Resolution_Label.TabIndex = 21;
-            this.Resolution_Label.Text = "4. [Optional] Resolution";
+            this.Resolution_Label.Text = "4. Resolution";
             // 
             // Resolution_TextBox
             // 

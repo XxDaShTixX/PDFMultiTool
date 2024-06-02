@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PDFMultiTool.Models;
+using PDFMultiTool.Utility;
+using System;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -123,9 +126,15 @@ namespace PDFMultiTool
                 // Go through each file path
                 foreach (string path in paths)
                 {
+                    // Create a FileItem object for each file path
+                    FileModel file = new FileModel(path);
+
                     // Add them to the list box
-                    listBox.Items.Add(path);
+                    listBox.Items.Add(file);
                 }
+
+                // Log
+                Logger.Instance.AppendText($"Selected {paths.Length} files.");
             }
         }
 
@@ -163,6 +172,9 @@ namespace PDFMultiTool
 
                 // Set the text value of the textbox
                 browseOutput_Textbox.Text = selectedFolderPath;
+
+                // Log
+                Logger.Instance.AppendText($"Set output location: {selectedFolderPath}");
             }
         }
 
@@ -221,7 +233,7 @@ namespace PDFMultiTool
             }
 
             PDFConvert.Instance.Convert(
-                SelectFiles_ListBox.Items.Cast<string>().ToArray(),
+                SelectFiles_ListBox.Items.Cast<FileModel>().ToArray(),
                 fromExtension_ComboBox.Text,
                 toExtension_ComboBox.Text,
                 browseOutput_Textbox.Text,

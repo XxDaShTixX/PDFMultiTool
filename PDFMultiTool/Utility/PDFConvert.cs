@@ -191,12 +191,13 @@ namespace PDFMultiTool
         /// Performs the conversion
         /// </summary>
         /// <param name="filesToConvert"></param>
-        /// <param name="inputExtension">pdf, jpg, etc.</param>
-        /// <param name="outputExtension"></param>
-        /// <param name="outputPath">C:\\output</param>
-        /// <param name="device"></param>
+        /// <param name="fromExtension"></param>
+        /// <param name="toExtension"></param>
+        /// <param name="outputPath"></param>
+        /// <param name="isSeparateOutputFiles"></param>
+        /// <param name="resolution"></param>
         public void Convert(
-            string[] filesToConvert,
+            FileModel[] filesToConvert,
             string fromExtension,
             string toExtension,
             string outputPath,
@@ -212,19 +213,12 @@ namespace PDFMultiTool
             );
 
             // Process each file
-            foreach (var filePath in filesToConvert)
+            foreach (FileModel file in filesToConvert)
             {
-                string fileNameNoExt = Path.GetFileNameWithoutExtension(filePath);
+                string fileNameNoExt = Path.GetFileNameWithoutExtension(file.FullPath);
                 string outputFileName = isSeparateOutputFiles ? $"{fileNameNoExt}.%d.{toExtension}" : $"{fileNameNoExt}.{toExtension}";
                 
-                var args = $@"
--sDEVICE={device} 
--dNOPAUSE 
--r{resolution} 
--sOutputFile=""{outputPath}\\{outputFileName}"" ""{filePath}"" 
--c quit
-";
-
+                var args = $@"-sDEVICE={device} -dNOPAUSE -r{resolution} -sOutputFile=""{outputPath}\\{outputFileName}"" ""{file.FullPath}"" -c quit";
 
                 var startInfo = new ProcessStartInfo(
                     Configuration.Instance.GetValue(ConfigurationOptionsEnum.GhostScriptPath.ToString()),

@@ -50,24 +50,18 @@ namespace PDFMultiTool
         /// <param name="outputPath">C:\\output</param>
         /// <param name="device"></param>
         public void Combine(
-    string[] filesToCombine,
+    FileModel[] filesToCombine,
     string outputPath,
     string outputFileNameNoExt,
     int resolution = 300
 )
         {
-            string outputFileName = $"{outputFileNameNoExt}.pdf";
+            string outputFileNameWithExt = $"{outputFileNameNoExt}.pdf";
 
             // Prepare the list of files to combine
-            string inputFiles = string.Join(" ", filesToCombine.Select(f => $"\"{f}\""));
+            string inputFiles = string.Join(" ", filesToCombine.Select(f => $"\"{f.FullPath}\""));
 
-            var args = $@"
-    -sDEVICE={device} 
-    -dNOPAUSE 
-    -r{resolution} 
-    -sOutputFile=""{outputPath}\\{outputFileName}"" {inputFiles}
-    -c quit
-    ";
+            var args = $@"-sDEVICE={device} -dNOPAUSE -r{resolution} -sOutputFile=""{outputPath}\\{outputFileNameWithExt}"" {inputFiles} -c quit";
 
             var startInfo = new ProcessStartInfo(
                 Configuration.Instance.GetValue(ConfigurationOptionsEnum.GhostScriptPath.ToString()),

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PDFMultiTool.Models;
+using PDFMultiTool.Utility;
+using System;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -61,9 +64,15 @@ namespace PDFMultiTool
                 // Go through each file path
                 foreach (string path in paths)
                 {
+                    // Create a FileItem object for each file path
+                    FileModel file = new FileModel(path);
+
                     // Add them to the list box
-                    listBox.Items.Add(path);
+                    listBox.Items.Add(file);
                 }
+
+                // Log
+                Logger.Instance.AppendText($"Selected {paths.Length} files.");
             }
         }
 
@@ -99,6 +108,9 @@ namespace PDFMultiTool
 
                 // Set the text value of the textbox
                 browseOutput_Textbox.Text = selectedFolderPath;
+
+                // Log
+                Logger.Instance.AppendText($"Set output location: {selectedFolderPath}");
             }
         }
 
@@ -129,11 +141,44 @@ namespace PDFMultiTool
             }
 
             PDFCombine.Instance.Combine(
-                SelectFiles_ListBox.Items.Cast<string>().ToArray(),
+                SelectFiles_ListBox.Items.Cast<FileModel>().ToArray(),
                 browseOutput_Textbox.Text,
                 OutputFileName_TextBox.Text,
                 Int16.Parse(Resolution_TextBox.Text)
             );
+        }
+
+        private void MoveFileUp_Button_Click(object sender, EventArgs e)
+        {
+            MoveItem(-1);
+        }
+
+        private void MoveFileDown_Button_Click(object sender, EventArgs e)
+        {
+            MoveItem(1);
+        }
+
+        private void MoveItem(int direction)
+        {
+            // Checking selected item
+            if (SelectFiles_ListBox.SelectedItem == null || SelectFiles_ListBox.SelectedIndex < 0)
+                return; // No selected item - nothing to do
+
+            // Calculate new index using move direction
+            int newIndex = SelectFiles_ListBox.SelectedIndex + direction;
+
+            // Checking bounds of the range
+            if (newIndex < 0 || newIndex >= SelectFiles_ListBox.Items.Count)
+                return; // Index out of range - nothing to do
+
+            object selected = SelectFiles_ListBox.SelectedItem;
+
+            // Removing removable element
+            SelectFiles_ListBox.Items.Remove(selected);
+            // Insert it in new position
+            SelectFiles_ListBox.Items.Insert(newIndex, selected);
+            // Restore selection
+            SelectFiles_ListBox.SetSelected(newIndex, true);
         }
     }
 }

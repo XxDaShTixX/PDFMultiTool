@@ -43,6 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Resolution_TextBox = new System.Windows.Forms.TextBox();
             this.OutputFileExtension_CombineUserControl_Label = new System.Windows.Forms.Label();
+            this.MoveFileUp_Button = new System.Windows.Forms.Button();
+            this.MoveFileDown_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // combine_Button
@@ -149,7 +151,7 @@
             this.OutputFileName_CombineUserControl_Label.BackColor = System.Drawing.Color.Transparent;
             this.OutputFileName_CombineUserControl_Label.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputFileName_CombineUserControl_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.OutputFileName_CombineUserControl_Label.Location = new System.Drawing.Point(3, 263);
+            this.OutputFileName_CombineUserControl_Label.Location = new System.Drawing.Point(3, 267);
             this.OutputFileName_CombineUserControl_Label.Name = "OutputFileName_CombineUserControl_Label";
             this.OutputFileName_CombineUserControl_Label.Size = new System.Drawing.Size(144, 19);
             this.OutputFileName_CombineUserControl_Label.TabIndex = 21;
@@ -158,7 +160,7 @@
             // OutputFileName_TextBox
             // 
             this.OutputFileName_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.OutputFileName_TextBox.Location = new System.Drawing.Point(153, 260);
+            this.OutputFileName_TextBox.Location = new System.Drawing.Point(153, 264);
             this.OutputFileName_TextBox.Name = "OutputFileName_TextBox";
             this.OutputFileName_TextBox.Size = new System.Drawing.Size(111, 27);
             this.OutputFileName_TextBox.TabIndex = 20;
@@ -172,9 +174,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label1.Location = new System.Drawing.Point(3, 329);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 19);
+            this.label1.Size = new System.Drawing.Size(100, 19);
             this.label1.TabIndex = 26;
-            this.label1.Text = "4. [Optional] Resolution";
+            this.label1.Text = "4. Resolution";
             // 
             // Resolution_TextBox
             // 
@@ -192,16 +194,46 @@
             this.OutputFileExtension_CombineUserControl_Label.BackColor = System.Drawing.Color.Transparent;
             this.OutputFileExtension_CombineUserControl_Label.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputFileExtension_CombineUserControl_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.OutputFileExtension_CombineUserControl_Label.Location = new System.Drawing.Point(270, 263);
+            this.OutputFileExtension_CombineUserControl_Label.Location = new System.Drawing.Point(270, 267);
             this.OutputFileExtension_CombineUserControl_Label.Name = "OutputFileExtension_CombineUserControl_Label";
             this.OutputFileExtension_CombineUserControl_Label.Size = new System.Drawing.Size(37, 19);
             this.OutputFileExtension_CombineUserControl_Label.TabIndex = 27;
             this.OutputFileExtension_CombineUserControl_Label.Text = ".pdf";
             // 
+            // MoveFileUp_Button
+            // 
+            this.MoveFileUp_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
+            this.MoveFileUp_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MoveFileUp_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveFileUp_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
+            this.MoveFileUp_Button.Location = new System.Drawing.Point(313, 64);
+            this.MoveFileUp_Button.Name = "MoveFileUp_Button";
+            this.MoveFileUp_Button.Size = new System.Drawing.Size(30, 30);
+            this.MoveFileUp_Button.TabIndex = 28;
+            this.MoveFileUp_Button.Text = "⬆️";
+            this.MoveFileUp_Button.UseVisualStyleBackColor = true;
+            this.MoveFileUp_Button.Click += new System.EventHandler(this.MoveFileUp_Button_Click);
+            // 
+            // MoveFileDown_Button
+            // 
+            this.MoveFileDown_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
+            this.MoveFileDown_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MoveFileDown_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveFileDown_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
+            this.MoveFileDown_Button.Location = new System.Drawing.Point(313, 100);
+            this.MoveFileDown_Button.Name = "MoveFileDown_Button";
+            this.MoveFileDown_Button.Size = new System.Drawing.Size(30, 30);
+            this.MoveFileDown_Button.TabIndex = 29;
+            this.MoveFileDown_Button.Text = "⬇️";
+            this.MoveFileDown_Button.UseVisualStyleBackColor = true;
+            this.MoveFileDown_Button.Click += new System.EventHandler(this.MoveFileDown_Button_Click);
+            // 
             // CombineUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
+            this.Controls.Add(this.MoveFileDown_Button);
+            this.Controls.Add(this.MoveFileUp_Button);
             this.Controls.Add(this.OutputFileExtension_CombineUserControl_Label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Resolution_TextBox);
@@ -241,5 +273,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Resolution_TextBox;
         private System.Windows.Forms.Label OutputFileExtension_CombineUserControl_Label;
+        private System.Windows.Forms.Button MoveFileUp_Button;
+        private System.Windows.Forms.Button MoveFileDown_Button;
     }
 }

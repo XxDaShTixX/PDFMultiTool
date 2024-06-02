@@ -59,6 +59,7 @@
       <DependentUpon>CombineUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ExtensionConverterModel.cs" />
+    <Compile Include="Models\FileModel.cs" />
     <Compile Include="Utility\Configuration.cs" />
     <Compile Include="Enums\ConfigurationOptionsEnum.cs" />
     <Compile Include="MainForm.cs">
