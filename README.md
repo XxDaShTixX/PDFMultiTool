@@ -11,6 +11,7 @@ PDF Multi-Tool is a desktop application built with Windows Forms and .NET Framew
 - In order for this tool to work, you must have the [GhostScript](https://github.com/ArtifexSoftware/ghostpdl-downloads) installed on your device.
   - Install current version Go to release > Ghostscript/GhostPDL <version> > gs<version>w64.exe
   - Current working version: [Ghostscript/GhostPDL v10.03.1](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/tag/gs10031).
+- This project is using .NET Framework 4.8. Make sure you have this on your machine.
 
 # 📃 Issues & Requests
 - Please report bugs, make requests or suggestions by [submitting an issue](../../issues) with the right tag
