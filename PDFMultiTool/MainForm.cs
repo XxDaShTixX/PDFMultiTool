@@ -134,5 +134,14 @@ namespace PDFMultiTool
             // Update the current control
             _currentControl = myUserControl;
         }
+
+        private void GitHub_MainForm_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Specify that the link was visited.
+            GitHub_MainForm_LinkLabel.LinkVisited = false;
+
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start("https://github.com/XxDaShTixX/PDFMultiTool/");
+        }
     }
 }

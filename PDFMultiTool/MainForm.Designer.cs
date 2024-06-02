@@ -41,12 +41,14 @@
             this.Exit_Button = new System.Windows.Forms.Button();
             this.Minimize_Button = new System.Windows.Forms.Button();
             this.ghostScriptFile_MainForm_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.GitHub_MainForm_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.Logo_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.GitHub_MainForm_LinkLabel);
             this.panel1.Controls.Add(this.encryptDecrypt_MainForm_Button);
             this.panel1.Controls.Add(this.output_MainForm_RichTextbox);
             this.panel1.Controls.Add(this.insert_MainForm_Button);
@@ -218,6 +220,19 @@
             // 
             this.ghostScriptFile_MainForm_OpenFileDialog.FileName = "gswin64c.exe";
             // 
+            // GitHub_MainForm_LinkLabel
+            // 
+            this.GitHub_MainForm_LinkLabel.AutoSize = true;
+            this.GitHub_MainForm_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.GitHub_MainForm_LinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
+            this.GitHub_MainForm_LinkLabel.Location = new System.Drawing.Point(1, 431);
+            this.GitHub_MainForm_LinkLabel.Name = "GitHub_MainForm_LinkLabel";
+            this.GitHub_MainForm_LinkLabel.Size = new System.Drawing.Size(93, 19);
+            this.GitHub_MainForm_LinkLabel.TabIndex = 8;
+            this.GitHub_MainForm_LinkLabel.TabStop = true;
+            this.GitHub_MainForm_LinkLabel.Text = "GitHub Page";
+            this.GitHub_MainForm_LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GitHub_MainForm_LinkLabel_LinkClicked);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -237,6 +252,7 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.Logo_Panel.ResumeLayout(false);
             this.Logo_Panel.PerformLayout();
             this.ResumeLayout(false);
@@ -258,6 +274,7 @@
         private System.Windows.Forms.Button insert_MainForm_Button;
         private System.Windows.Forms.RichTextBox output_MainForm_RichTextbox;
         private System.Windows.Forms.OpenFileDialog ghostScriptFile_MainForm_OpenFileDialog;
+        private System.Windows.Forms.LinkLabel GitHub_MainForm_LinkLabel;
     }
 }
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.combine_Button = new System.Windows.Forms.Button();
             this.BrowseFile_Button = new System.Windows.Forms.Button();
             this.browseOutput_Button = new System.Windows.Forms.Button();
             this.browseOutput_Textbox = new System.Windows.Forms.TextBox();
@@ -37,7 +36,6 @@
             this.browseFiles_ConvertUserControl_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SelectFiles_ListBox = new System.Windows.Forms.ListBox();
             this.browseFolder_ConvertUserControl_FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.progress_UserControl_ProgressBar = new System.Windows.Forms.ProgressBar();
             this.OutputFileName_CombineUserControl_Label = new System.Windows.Forms.Label();
             this.OutputFileName_TextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,21 +43,8 @@
             this.OutputFileExtension_CombineUserControl_Label = new System.Windows.Forms.Label();
             this.MoveFileUp_Button = new System.Windows.Forms.Button();
             this.MoveFileDown_Button = new System.Windows.Forms.Button();
+            this.combine_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // combine_Button
-            // 
-            this.combine_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.combine_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.combine_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combine_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.combine_Button.Location = new System.Drawing.Point(579, 336);
-            this.combine_Button.Name = "combine_Button";
-            this.combine_Button.Size = new System.Drawing.Size(100, 50);
-            this.combine_Button.TabIndex = 4;
-            this.combine_Button.Text = "Combine";
-            this.combine_Button.UseVisualStyleBackColor = true;
-            this.combine_Button.Click += new System.EventHandler(this.combine_Button_Click);
             // 
             // BrowseFile_Button
             // 
@@ -136,14 +121,6 @@
             // browseFolder_ConvertUserControl_FolderBrowserDialog
             // 
             this.browseFolder_ConvertUserControl_FolderBrowserDialog.ShowNewFolderButton = false;
-            // 
-            // progress_UserControl_ProgressBar
-            // 
-            this.progress_UserControl_ProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.progress_UserControl_ProgressBar.Location = new System.Drawing.Point(0, 392);
-            this.progress_UserControl_ProgressBar.Name = "progress_UserControl_ProgressBar";
-            this.progress_UserControl_ProgressBar.Size = new System.Drawing.Size(679, 10);
-            this.progress_UserControl_ProgressBar.TabIndex = 19;
             // 
             // OutputFileName_CombineUserControl_Label
             // 
@@ -228,6 +205,20 @@
             this.MoveFileDown_Button.UseVisualStyleBackColor = true;
             this.MoveFileDown_Button.Click += new System.EventHandler(this.MoveFileDown_Button_Click);
             // 
+            // combine_Button
+            // 
+            this.combine_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
+            this.combine_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.combine_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combine_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
+            this.combine_Button.Location = new System.Drawing.Point(579, 349);
+            this.combine_Button.Name = "combine_Button";
+            this.combine_Button.Size = new System.Drawing.Size(100, 50);
+            this.combine_Button.TabIndex = 4;
+            this.combine_Button.Text = "Combine";
+            this.combine_Button.UseVisualStyleBackColor = true;
+            this.combine_Button.Click += new System.EventHandler(this.combine_Button_Click);
+            // 
             // CombineUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -239,7 +230,6 @@
             this.Controls.Add(this.Resolution_TextBox);
             this.Controls.Add(this.OutputFileName_CombineUserControl_Label);
             this.Controls.Add(this.OutputFileName_TextBox);
-            this.Controls.Add(this.progress_UserControl_ProgressBar);
             this.Controls.Add(this.SelectFiles_ListBox);
             this.Controls.Add(this.browseOutput_CombineUserControl_Label);
             this.Controls.Add(this.SelectFiles_Label);
@@ -258,7 +248,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button combine_Button;
         private System.Windows.Forms.Button BrowseFile_Button;
         private System.Windows.Forms.Button browseOutput_Button;
         private System.Windows.Forms.TextBox browseOutput_Textbox;
@@ -267,7 +256,6 @@
         private System.Windows.Forms.OpenFileDialog browseFiles_ConvertUserControl_OpenFileDialog;
         private System.Windows.Forms.ListBox SelectFiles_ListBox;
         private System.Windows.Forms.FolderBrowserDialog browseFolder_ConvertUserControl_FolderBrowserDialog;
-        private System.Windows.Forms.ProgressBar progress_UserControl_ProgressBar;
         private System.Windows.Forms.Label OutputFileName_CombineUserControl_Label;
         private System.Windows.Forms.TextBox OutputFileName_TextBox;
         private System.Windows.Forms.Label label1;
@@ -275,5 +263,6 @@
         private System.Windows.Forms.Label OutputFileExtension_CombineUserControl_Label;
         private System.Windows.Forms.Button MoveFileUp_Button;
         private System.Windows.Forms.Button MoveFileDown_Button;
+        private System.Windows.Forms.Button combine_Button;
     }
 }
