@@ -1,7 +1,7 @@
-﻿using PDFMultiTool.Enums;
-using PDFMultiTool.Utility;
+﻿using PDFMultiTool.Utility;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PDFMultiTool
@@ -9,6 +9,9 @@ namespace PDFMultiTool
     public partial class MainForm : Form
     {
         // Color Palette: https://colorhunt.co/palette/22283131363f76abaeeeeeee
+
+        // Current user control
+        private UserControl _currentControl;
 
         private bool dragging = false;
         private Point dragCursorPoint;
@@ -79,19 +82,6 @@ namespace PDFMultiTool
             }
         }
 
-        private void Convert_MainForm_Button_Click(object sender, EventArgs e)
-        {
-            // Create a new instance of your UserControl
-            var myUserControl = new ConvertUserControl();
-
-            // Add it to the form (or another control)
-            this.Controls.Add(myUserControl);
-
-            // Set the location and size as needed
-            myUserControl.Location = userControlLocation;
-            myUserControl.Size = userControlSize;
-        }
-
         private void FormResizingEventHandler(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Maximized)
@@ -100,11 +90,49 @@ namespace PDFMultiTool
             }
         }
 
-        
+        private void Convert_MainForm_Button_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of your UserControl
+            var myUserControl = new ConvertUserControl();
+
+            // Remove the old user control
+            if (_currentControl != null)
+            {
+                this.Controls.Remove(_currentControl);
+            }
+
+
+            // Add it to the form (or another control)
+            this.Controls.Add(myUserControl);
+
+            // Set the location and size as needed
+            myUserControl.Location = userControlLocation;
+            myUserControl.Size = userControlSize;
+
+            // Update the current control
+            _currentControl = myUserControl;
+        }
 
         private void combine_MainForm_Button_Click(object sender, EventArgs e)
         {
-            // TESTING
+            // Create a new instance of your new control
+            var myUserControl = new CombineUserControl();
+
+            // Remove the old user control
+            if (_currentControl != null)
+            {
+                this.Controls.Remove(_currentControl);
+            }
+
+            // Add it to the form (or another control)
+            this.Controls.Add(myUserControl);
+
+            // Set the location and size as needed
+            myUserControl.Location = userControlLocation;
+            myUserControl.Size = userControlSize;
+
+            // Update the current control
+            _currentControl = myUserControl;
         }
     }
 }

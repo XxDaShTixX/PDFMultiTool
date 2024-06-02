@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PDFMultiTool
 {
-    internal class PDFConverter
+    internal class PDFConvert
     {
-        private static PDFConverter instance = null;
+        private static PDFConvert instance = null;
         private static readonly object padlock = new object();
 
         // Hold each extension and what other extensions it is capable of being converted to
@@ -90,14 +90,14 @@ namespace PDFMultiTool
         /// <summary>
         /// Constructor
         /// </summary>
-        PDFConverter()
+        PDFConvert()
         {
         }
 
         /// <summary>
         /// Implement Singleton pattern
         /// </summary>
-        public static PDFConverter Instance
+        public static PDFConvert Instance
         {
             get
             {
@@ -105,7 +105,7 @@ namespace PDFMultiTool
                 {
                     if (instance == null)
                     {
-                        instance = new PDFConverter();
+                        instance = new PDFConvert();
                     }
                     return instance;
                 }
@@ -191,12 +191,13 @@ namespace PDFMultiTool
         /// Performs the conversion
         /// </summary>
         /// <param name="filesToConvert"></param>
-        /// <param name="inputExtension">pdf, jpg, etc.</param>
-        /// <param name="outputExtension"></param>
-        /// <param name="outputPath">C:\\output</param>
-        /// <param name="device"></param>
+        /// <param name="fromExtension"></param>
+        /// <param name="toExtension"></param>
+        /// <param name="outputPath"></param>
+        /// <param name="isSeparateOutputFiles"></param>
+        /// <param name="resolution"></param>
         public void Convert(
-            string[] filesToConvert,
+            FileModel[] filesToConvert,
             string fromExtension,
             string toExtension,
             string outputPath,
@@ -206,25 +207,18 @@ namespace PDFMultiTool
         )
         {
             // Get the device to use for the process
-            string device = PDFConverter.Instance.GetDevice(
+            string device = GetDevice(
                 fromExtension,
                 toExtension
             );
 
             // Process each file
-            foreach (var filePath in filesToConvert)
+            foreach (FileModel file in filesToConvert)
             {
-                string fileNameNoExt = Path.GetFileNameWithoutExtension(filePath);
+                string fileNameNoExt = Path.GetFileNameWithoutExtension(file.FullPath);
                 string outputFileName = isSeparateOutputFiles ? $"{fileNameNoExt}.%d.{toExtension}" : $"{fileNameNoExt}.{toExtension}";
                 
-                var args = $@"
--sDEVICE={device} 
--dNOPAUSE 
--r{resolution} 
--sOutputFile=""{outputPath}\\{outputFileName}"" ""{filePath}"" 
--c quit
-";
-
+                var args = $@"-sDEVICE={device} -dNOPAUSE -r{resolution} -sOutputFile=""{outputPath}\\{outputFileName}"" ""{file.FullPath}"" -c quit";
 
                 var startInfo = new ProcessStartInfo(
                     Configuration.Instance.GetValue(ConfigurationOptionsEnum.GhostScriptPath.ToString()),
