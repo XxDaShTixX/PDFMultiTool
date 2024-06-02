@@ -42,7 +42,6 @@
             this.browseFiles_ConvertUserControl_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SelectFiles_ListBox = new System.Windows.Forms.ListBox();
             this.browseFolder_ConvertUserControl_FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.progress_ProgressBar = new System.Windows.Forms.ProgressBar();
             this.Resolution_Label = new System.Windows.Forms.Label();
             this.Resolution_TextBox = new System.Windows.Forms.TextBox();
             this.SeparateOutputFiles_CheckBox = new System.Windows.Forms.CheckBox();
@@ -54,7 +53,7 @@
             this.convert_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.convert_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.convert_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.convert_Button.Location = new System.Drawing.Point(579, 336);
+            this.convert_Button.Location = new System.Drawing.Point(579, 349);
             this.convert_Button.Name = "convert_Button";
             this.convert_Button.Size = new System.Drawing.Size(100, 50);
             this.convert_Button.TabIndex = 4;
@@ -196,14 +195,6 @@
             // 
             this.browseFolder_ConvertUserControl_FolderBrowserDialog.ShowNewFolderButton = false;
             // 
-            // progress_ProgressBar
-            // 
-            this.progress_ProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.progress_ProgressBar.Location = new System.Drawing.Point(0, 392);
-            this.progress_ProgressBar.Name = "progress_ProgressBar";
-            this.progress_ProgressBar.Size = new System.Drawing.Size(679, 10);
-            this.progress_ProgressBar.TabIndex = 19;
-            // 
             // Resolution_Label
             // 
             this.Resolution_Label.AutoSize = true;
@@ -244,7 +235,6 @@
             this.Controls.Add(this.SeparateOutputFiles_CheckBox);
             this.Controls.Add(this.Resolution_Label);
             this.Controls.Add(this.Resolution_TextBox);
-            this.Controls.Add(this.progress_ProgressBar);
             this.Controls.Add(this.SelectFiles_ListBox);
             this.Controls.Add(this.toExtension_Label);
             this.Controls.Add(this.toExtension_ComboBox);
@@ -282,7 +272,6 @@
         private System.Windows.Forms.OpenFileDialog browseFiles_ConvertUserControl_OpenFileDialog;
         private System.Windows.Forms.ListBox SelectFiles_ListBox;
         private System.Windows.Forms.FolderBrowserDialog browseFolder_ConvertUserControl_FolderBrowserDialog;
-        private System.Windows.Forms.ProgressBar progress_ProgressBar;
         private System.Windows.Forms.Label Resolution_Label;
         private System.Windows.Forms.TextBox Resolution_TextBox;
         private System.Windows.Forms.CheckBox SeparateOutputFiles_CheckBox;
