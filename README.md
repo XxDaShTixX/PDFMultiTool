@@ -27,7 +27,7 @@ The following is a list of the project's features. The checkboxes indicate the i
 - .pdf ➡️ .txt
 
 [X] Combine multiple PDF files into one PDF file.  
-[-] Split an existing PDF file into a separate PDF file by defining a page range.  
+[X] Split an existing PDF file into a separate PDF file by defining a page range.  
 [-] Encrypt or Decrypt a PDF file using the RC4 algorithm encryption method.  
 
 # 📄 Using PDF Multi-Tool
