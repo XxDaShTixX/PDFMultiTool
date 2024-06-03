@@ -2,14 +2,35 @@
   <img src="https://i.postimg.cc/W3XSrMwP/Logo.png" width="auto">
 </p>
 
-# 📃 About
+# 📜 About
 PDF Multi-Tool is a desktop application built with Windows Forms and .NET Framework 4.8 in C#. It uses the GhostScript library to convert and perform other tasks on PDF files. The application provides a user-friendly interface for managing conversion tasks.
 
 <p align="center">
   <img src="https://i.postimg.cc/rsb6VqW4/image.png" width="auto">
 </p>
 
-# 📃 Using PDF Multi-Tool
+# 📜 Features
+The following is a list of the project's features. The checkboxes indicate the implementation status of each feature. A checked box signifies that the feature has been successfully implemented, while an unchecked box indicates a feature that is yet to be implemented: 
+
+[X] Convert PDF files to other extensions. List of support extensions:
+- .eps ➡️ .pdf
+- .pcl ➡️ .pdf
+- .ps ➡️ .pdf
+- .pdf ➡️ .bmp
+- .pdf ➡️ .eps
+- .pdf ➡️ .html
+- .pdf ➡️ .jpeg
+- .pdf ➡️ .png
+- .pdf ➡️ .ps
+- .pdf ➡️ .svg
+- .pdf ➡️ .tiff
+- .pdf ➡️ .txt
+
+[X] Combine multiple PDF files into one PDF file.  
+[-] Split an existing PDF file into a separate PDF file by defining a page range.  
+[-] Encrypt or Decrypt a PDF file using the RC4 algorithm encryption method.  
+
+# 📜 Using PDF Multi-Tool
 
 ## 📃 Download
 Releases > [v0.0.1](../../releases/tag/v0.0.1)
@@ -20,7 +41,10 @@ Releases > [v0.0.1](../../releases/tag/v0.0.1)
   - Install current version Go to release > Ghostscript/GhostPDL <version> > gs<version>w64.exe
   - Current working version: [Ghostscript/GhostPDL v10.03.1](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/tag/gs10031).
 
-# 📃 Contributing to PDF Multi-Tool
+## 📃 How to Use
+Pending...
+
+# 📜 Contributing to PDF Multi-Tool
 
 ## 📃 Dependencies
 - This project is built using the [GhostScript.NET by Artifex](https://github.com/ArtifexSoftware/Ghostscript.NET) .NET library.
