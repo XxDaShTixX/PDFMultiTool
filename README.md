@@ -1,7 +1,13 @@
-![alt text](https://i.postimg.cc/rsb6VqW4/image.png)
+<p align="center">
+  <img src="https://i.postimg.cc/W3XSrMwP/Logo.png" width="auto">
+</p>
 
 # 📃 About
 PDF Multi-Tool is a desktop application built with Windows Forms and .NET Framework 4.8 in C#. It uses the GhostScript library to convert and perform other tasks on PDF files. The application provides a user-friendly interface for managing conversion tasks.
+
+<p align="center">
+  <img src="https://i.postimg.cc/rsb6VqW4/image.png" width="auto">
+</p>
 
 # 📃 Using PDF Multi-Tool
 
