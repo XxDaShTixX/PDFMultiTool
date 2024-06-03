@@ -218,7 +218,7 @@ namespace PDFMultiTool
                 string fileNameNoExt = Path.GetFileNameWithoutExtension(file.FullPath);
                 string outputFileName = isSeparateOutputFiles ? $"{fileNameNoExt}.%d.{toExtension}" : $"{fileNameNoExt}.{toExtension}";
                 
-                var args = $@"-sDEVICE={device} -dNOPAUSE -r{resolution} -sOutputFile=""{outputPath}\\{outputFileName}"" ""{file.FullPath}"" -c quit";
+                var args = $@"-sDEVICE={device} -dNOPAUSE -dBATCH -dSAFER -r{resolution} -sOutputFile=""{outputPath}\\{outputFileName}"" ""{file.FullPath}"" -c quit";
 
                 var startInfo = new ProcessStartInfo(
                     Configuration.Instance.GetValue(ConfigurationOptionsEnum.GhostScriptPath.ToString()),

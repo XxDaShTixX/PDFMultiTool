@@ -87,11 +87,11 @@ namespace PDFMultiTool
             if(fromExtension_ComboBox.SelectedItem == null
                 || toExtension_ComboBox.SelectedItem == null)
             {
-                MessageBox.Show(
-                    "Please follow the steps in order.", 
-                    "PDF Multi-Tool",
+                Logger.Instance.ShowMessageBox(
+                    $"Please follow the steps in order.",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+
                 return;
             }
 
@@ -150,11 +150,11 @@ namespace PDFMultiTool
             || toExtension_ComboBox.SelectedItem == null
             || SelectFiles_ListBox.Items.Count == 0)
             {
-                MessageBox.Show(
-                    "Please follow the steps in order.",
-                    "PDF Multi-Tool",
+                Logger.Instance.ShowMessageBox(
+                    $"Please follow the steps in order.",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+
                 return;
             }
 
@@ -222,13 +222,14 @@ namespace PDFMultiTool
                 || toExtension_ComboBox.SelectedItem.Equals(null)
                 || SelectFiles_ListBox.Items.Count.Equals(0)
                 || browseOutput_Textbox.Text.Equals(string.Empty)
+                || string.IsNullOrEmpty(Resolution_TextBox.Text)
             )
             {
-                MessageBox.Show(
-                    "Please follow the steps in order.",
-                    "PDF Multi-Tool",
+                Logger.Instance.ShowMessageBox(
+                    $"Please follow the steps in order.",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+
                 return;
             }
 

@@ -1,30 +1,27 @@
 ﻿using PDFMultiTool.Enums;
 using PDFMultiTool.Models;
-using PDFMultiTool.Utility;
-using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using System;
 
-namespace PDFMultiTool
+namespace PDFMultiTool.Utility
 {
-    internal class PDFCombine
+    internal class PDFSplit
     {
-        private static PDFCombine instance = null;
+        private static PDFSplit instance = null;
         private static readonly object padlock = new object();
         private const string device = "pdfwrite";
 
         /// <summary>
         /// Constructor
         /// </summary>
-        PDFCombine()
-        {
-        }
+        PDFSplit() { }
 
         /// <summary>
         /// Implement Singleton pattern
         /// </summary>
-        public static PDFCombine Instance
+        public static PDFSplit Instance
         {
             get
             {
@@ -32,7 +29,7 @@ namespace PDFMultiTool
                 {
                     if (instance == null)
                     {
-                        instance = new PDFCombine();
+                        instance = new PDFSplit();
                     }
                     return instance;
                 }
@@ -40,23 +37,21 @@ namespace PDFMultiTool
         }
 
         /// <summary>
-        /// Performs the combine
+        /// Performs the split
         /// </summary>
         /// <param name="filesToConvert"></param>
         /// <param name="inputExtension">pdf, jpg, etc.</param>
         /// <param name="outputExtension"></param>
         /// <param name="outputPath">C:\\output</param>
         /// <param name="device"></param>
-        public void Combine(
-    FileModel[] filesToCombine,
-    string outputFilePath,
-    int resolution = 300
-)
+        public void Split(
+    string sourceFilePath,
+    Int64 fromPage,
+    Int64 toPage,
+    string outputFolder,
+    string outputFileName)
         {
-            // Prepare the list of files to combine
-            string inputFiles = string.Join(" ", filesToCombine.Select(f => $"\"{f.FullPath}\""));
-
-            var args = $@"-sDEVICE={device} -dNOPAUSE -dBATCH -dSAFER -r{resolution} -sOutputFile=""{outputFilePath}"" {inputFiles} -c quit";
+            var args = $@"-sDEVICE={device} -dNOPAUSE -dBATCH -dSAFER -dFirstPage={fromPage} -dLastPage={toPage} -sOutputFile=""{outputFolder}\\{outputFileName}"" ""{sourceFilePath}"" -c quit";
 
             var startInfo = new ProcessStartInfo(
                 Configuration.Instance.GetValue(ConfigurationOptionsEnum.GhostScriptPath.ToString()),
