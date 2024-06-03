@@ -45,6 +45,15 @@ namespace PDFMultiTool.Utility
             this.logTextBox.ScrollToCaret();
         }
 
+        public void ShowMessageBox(string message, MessageBoxButtons buttons, MessageBoxIcon icon)
+        {
+            MessageBox.Show(
+                    message,
+                    "PDF Multi-Tool",
+                    buttons,
+                    icon);
+        }
+
         /// <summary>
         /// Sets the logRichTextBox instance to the one that the logger should log to
         /// </summary>

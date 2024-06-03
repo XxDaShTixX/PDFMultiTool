@@ -135,6 +135,28 @@ namespace PDFMultiTool
             _currentControl = myUserControl;
         }
 
+        private void split_MainForm_Button_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of your new control
+            var myUserControl = new SplitUserControl();
+
+            // Remove the old user control
+            if (_currentControl != null)
+            {
+                this.Controls.Remove(_currentControl);
+            }
+
+            // Add it to the form (or another control)
+            this.Controls.Add(myUserControl);
+
+            // Set the location and size as needed
+            myUserControl.Location = userControlLocation;
+            myUserControl.Size = userControlSize;
+
+            // Update the current control
+            _currentControl = myUserControl;
+        }
+
         private void GitHub_MainForm_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Specify that the link was visited.

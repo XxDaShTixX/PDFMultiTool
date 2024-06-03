@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GitHub_MainForm_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.encryptDecrypt_MainForm_Button = new System.Windows.Forms.Button();
             this.output_MainForm_RichTextbox = new System.Windows.Forms.RichTextBox();
-            this.insert_MainForm_Button = new System.Windows.Forms.Button();
             this.split_MainForm_Button = new System.Windows.Forms.Button();
             this.combine_MainForm_Button = new System.Windows.Forms.Button();
             this.convert_MainForm_Button = new System.Windows.Forms.Button();
@@ -41,7 +41,6 @@
             this.Exit_Button = new System.Windows.Forms.Button();
             this.Minimize_Button = new System.Windows.Forms.Button();
             this.ghostScriptFile_MainForm_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.GitHub_MainForm_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.Logo_Panel.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +50,6 @@
             this.panel1.Controls.Add(this.GitHub_MainForm_LinkLabel);
             this.panel1.Controls.Add(this.encryptDecrypt_MainForm_Button);
             this.panel1.Controls.Add(this.output_MainForm_RichTextbox);
-            this.panel1.Controls.Add(this.insert_MainForm_Button);
             this.panel1.Controls.Add(this.split_MainForm_Button);
             this.panel1.Controls.Add(this.combine_MainForm_Button);
             this.panel1.Controls.Add(this.convert_MainForm_Button);
@@ -62,6 +60,19 @@
             this.panel1.Size = new System.Drawing.Size(100, 450);
             this.panel1.TabIndex = 0;
             // 
+            // GitHub_MainForm_LinkLabel
+            // 
+            this.GitHub_MainForm_LinkLabel.AutoSize = true;
+            this.GitHub_MainForm_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.GitHub_MainForm_LinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
+            this.GitHub_MainForm_LinkLabel.Location = new System.Drawing.Point(1, 431);
+            this.GitHub_MainForm_LinkLabel.Name = "GitHub_MainForm_LinkLabel";
+            this.GitHub_MainForm_LinkLabel.Size = new System.Drawing.Size(93, 19);
+            this.GitHub_MainForm_LinkLabel.TabIndex = 8;
+            this.GitHub_MainForm_LinkLabel.TabStop = true;
+            this.GitHub_MainForm_LinkLabel.Text = "GitHub Page";
+            this.GitHub_MainForm_LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GitHub_MainForm_LinkLabel_LinkClicked);
+            // 
             // encryptDecrypt_MainForm_Button
             // 
             this.encryptDecrypt_MainForm_Button.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -69,7 +80,7 @@
             this.encryptDecrypt_MainForm_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
             this.encryptDecrypt_MainForm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.encryptDecrypt_MainForm_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.encryptDecrypt_MainForm_Button.Location = new System.Drawing.Point(0, 228);
+            this.encryptDecrypt_MainForm_Button.Location = new System.Drawing.Point(0, 178);
             this.encryptDecrypt_MainForm_Button.Margin = new System.Windows.Forms.Padding(0);
             this.encryptDecrypt_MainForm_Button.Name = "encryptDecrypt_MainForm_Button";
             this.encryptDecrypt_MainForm_Button.Size = new System.Drawing.Size(100, 50);
@@ -82,33 +93,17 @@
             this.output_MainForm_RichTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(54)))), ((int)(((byte)(63)))));
             this.output_MainForm_RichTextbox.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.output_MainForm_RichTextbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.output_MainForm_RichTextbox.Location = new System.Drawing.Point(0, 281);
+            this.output_MainForm_RichTextbox.Location = new System.Drawing.Point(0, 231);
             this.output_MainForm_RichTextbox.Name = "output_MainForm_RichTextbox";
             this.output_MainForm_RichTextbox.ReadOnly = true;
             this.output_MainForm_RichTextbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.output_MainForm_RichTextbox.Size = new System.Drawing.Size(100, 150);
+            this.output_MainForm_RichTextbox.Size = new System.Drawing.Size(100, 200);
             this.output_MainForm_RichTextbox.TabIndex = 8;
             this.output_MainForm_RichTextbox.Text = "";
-            // 
-            // insert_MainForm_Button
-            // 
-            this.insert_MainForm_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.insert_MainForm_Button.Enabled = false;
-            this.insert_MainForm_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.insert_MainForm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.insert_MainForm_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insert_MainForm_Button.Location = new System.Drawing.Point(0, 178);
-            this.insert_MainForm_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.insert_MainForm_Button.Name = "insert_MainForm_Button";
-            this.insert_MainForm_Button.Size = new System.Drawing.Size(100, 50);
-            this.insert_MainForm_Button.TabIndex = 6;
-            this.insert_MainForm_Button.Text = "Insert";
-            this.insert_MainForm_Button.UseVisualStyleBackColor = true;
             // 
             // split_MainForm_Button
             // 
             this.split_MainForm_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.split_MainForm_Button.Enabled = false;
             this.split_MainForm_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
             this.split_MainForm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.split_MainForm_Button.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,6 +114,7 @@
             this.split_MainForm_Button.TabIndex = 5;
             this.split_MainForm_Button.Text = "Split";
             this.split_MainForm_Button.UseVisualStyleBackColor = true;
+            this.split_MainForm_Button.Click += new System.EventHandler(this.split_MainForm_Button_Click);
             // 
             // combine_MainForm_Button
             // 
@@ -220,19 +216,6 @@
             // 
             this.ghostScriptFile_MainForm_OpenFileDialog.FileName = "gswin64c.exe";
             // 
-            // GitHub_MainForm_LinkLabel
-            // 
-            this.GitHub_MainForm_LinkLabel.AutoSize = true;
-            this.GitHub_MainForm_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.GitHub_MainForm_LinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(171)))), ((int)(((byte)(174)))));
-            this.GitHub_MainForm_LinkLabel.Location = new System.Drawing.Point(1, 431);
-            this.GitHub_MainForm_LinkLabel.Name = "GitHub_MainForm_LinkLabel";
-            this.GitHub_MainForm_LinkLabel.Size = new System.Drawing.Size(93, 19);
-            this.GitHub_MainForm_LinkLabel.TabIndex = 8;
-            this.GitHub_MainForm_LinkLabel.TabStop = true;
-            this.GitHub_MainForm_LinkLabel.Text = "GitHub Page";
-            this.GitHub_MainForm_LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GitHub_MainForm_LinkLabel_LinkClicked);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -271,7 +254,6 @@
         private System.Windows.Forms.Button Exit_Button;
         private System.Windows.Forms.Button Minimize_Button;
         private System.Windows.Forms.Button encryptDecrypt_MainForm_Button;
-        private System.Windows.Forms.Button insert_MainForm_Button;
         private System.Windows.Forms.RichTextBox output_MainForm_RichTextbox;
         private System.Windows.Forms.OpenFileDialog ghostScriptFile_MainForm_OpenFileDialog;
         private System.Windows.Forms.LinkLabel GitHub_MainForm_LinkLabel;
