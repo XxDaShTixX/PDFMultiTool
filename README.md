@@ -9,10 +9,10 @@ PDF Multi-Tool is a desktop application built with Windows Forms and .NET Framew
   <img src="https://i.postimg.cc/rsb6VqW4/image.png" width="auto">
 </p>
 
-# ⭐ Features
-The following is a list of the project's features. The checkboxes indicate the implementation status of each feature. A checked box signifies that the feature has been successfully implemented, while an unchecked box indicates a feature that is yet to be implemented: 
+# ⭐ Main Features
+The following is a list of the project's main features. A '✅' signifies that the feature has been successfully implemented, while a '⭕' indicates a feature that is yet to be implemented: 
 
-[X] Convert PDF files to other extensions. List of support extensions:
+✅ Convert PDF files to other extensions. List of support extensions:
 - .eps ➡️ .pdf
 - .pcl ➡️ .pdf
 - .ps ➡️ .pdf
@@ -26,9 +26,9 @@ The following is a list of the project's features. The checkboxes indicate the i
 - .pdf ➡️ .tiff
 - .pdf ➡️ .txt
 
-[X] Combine multiple PDF files into one PDF file.  
-[X] Split an existing PDF file into a separate PDF file by defining a page range.  
-[-] Encrypt or Decrypt a PDF file using the RC4 algorithm encryption method.  
+✅ Combine multiple PDF files into one PDF file.  
+✅ Split an existing PDF file into a separate PDF file by defining a page range.  
+⭕ Encrypt or Decrypt a PDF file using the RC4 algorithm encryption method.  
 
 # 📄 Using PDF Multi-Tool
 
