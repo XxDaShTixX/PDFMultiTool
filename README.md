@@ -33,7 +33,7 @@ The following is a list of the project's main features. A '✅' signifies that t
 # 📄 Using PDF Multi-Tool
 
 ## 💾 Download
-Releases > [v0.0.1](../../releases/tag/v0.0.1)
+Check out the latest version under [releases](../../releases/).
 
 ## 🔗 Dependencies
 - This project utilizes the .NET Framework 4.8. Please ensure that this version is installed on your system for optimal performance.
